@@ -5,6 +5,7 @@ import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
 import LoginScreen from './screens/loginScreen/LoginScreen'
+import WatchScreen from './screens/watchScreen/WatchScreen'
 
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
@@ -58,9 +59,13 @@ const App = () => {
             <Layout>
                <h1>Search Results</h1>
             </Layout>
-         }>
-            
-         </Route>
+         }/>
+
+         <Route path='/watch/:id' element = {
+            <Layout>
+               <WatchScreen />
+            </Layout>
+         }/>
 
          {/* <Route path ='/' element = {HomeScreen}/> */}
          
