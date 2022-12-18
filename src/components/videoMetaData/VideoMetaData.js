@@ -10,6 +10,7 @@ import {
    checkSubscriptionStatus,
    getChannelDetails,
 } from '../../redux/actions/channel.action'
+import HelmetCustom from '../HelmetCustom'
 const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
    const { channelId, channelTitle, description, title, publishedAt } = snippet
    const { viewCount, likeCount, dislikeCount } = statistics
@@ -32,6 +33,8 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
 
    return (
       <div className='py-2 videoMetaData'>
+         <HelmetCustom title={title} description={description} />
+
          <div className='videoMetaData__top'>
             <h5>{title}</h5>
             <div className='py-1 d-flex justify-content-between align-items-center'>
@@ -41,11 +44,11 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
                </span>
 
                <div>
-                  <span className='mr-3'>
-                     <MdThumbUp size={26} /> {numeral(likeCount).format('0.a')}
+                  <span className='mr-3 thumbup'>
+                     <MdThumbUp size={24} /> {numeral(likeCount).format('0.a')}
                   </span>
-                  <span className='mr-3'>
-                     <MdThumbDown size={26} />{' '}
+                  <span className='mr-3 thubdown'>
+                     <MdThumbDown size={24} />{' '}
                      {numeral(dislikeCount).format('0.a')}
                   </span>
                </div>

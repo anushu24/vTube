@@ -6,7 +6,9 @@ import Sidebar from './components/sidebar/Sidebar'
 import HomeScreen from './screens/homeScreen/HomeScreen'
 import LoginScreen from './screens/loginScreen/LoginScreen'
 import WatchScreen from './screens/watchScreen/WatchScreen'
-
+import SearchScreen from './screens/SearchScreen'
+import SubscriptionsScreen from './screens/subscriptionsScreen/SubscriptionsScreen'
+import ChannelScreen from './screens/channelScreen/ChannelScreen'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
 import './_app.scss'
@@ -55,15 +57,33 @@ const App = () => {
          <Route path='/auth' element = {<LoginScreen />}/>
          
 
-         <Route path='/search' element ={
+         <Route path='/search/:query' element ={
             <Layout>
-               <h1>Search Results</h1>
+               <SearchScreen />
             </Layout>
          }/>
 
          <Route path='/watch/:id' element = {
             <Layout>
                <WatchScreen />
+            </Layout>
+         }/>
+
+         <Route path='/feed/subscriptions' element = {
+            <Layout>
+               <SubscriptionsScreen />
+            </Layout>
+         }/>
+
+         <Route path='/feed/subscriptions' element = {
+            <Layout>
+               <SubscriptionsScreen />
+            </Layout>
+         }/>
+
+         <Route path='/channel/:channelId' element = {
+            <Layout>
+               <ChannelScreen />
             </Layout>
          }/>
 

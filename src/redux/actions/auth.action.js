@@ -19,6 +19,7 @@ export const login = () => async dispatch => {
 
       const res = await auth.signInWithPopup(provider)
       const accessToken = res.credential.accessToken
+      console.log(accessToken)
 
       const profile = {
          name: res.additionalUserInfo.profile.name,
