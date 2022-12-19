@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "vtube-49f13"
-  }
+    "default": "vtube-a3fa9",
+    "staging": "vtube-a3fa9"
+  },
+  "targets": {},
+  "etags": {}
 }
